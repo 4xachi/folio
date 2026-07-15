@@ -411,25 +411,27 @@
         // }
       }
 
-      .certificate__link {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-decoration: none;
-        color: $col-gray;
-        cursor: pointer;
+    }
 
-        .share-icon svg path {
-          transition: fill 0.2s;
-        }
+    .certificate__link {
+      display: flex !important;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      color: $col-gray;
+      cursor: pointer;
+      width: 100%;
 
-        @media (any-pointer: fine) {
-          &:hover {
-            color: $col-orange;
+      .share-icon svg path {
+        transition: fill 0.2s;
+      }
 
-            .share-icon svg path {
-              fill: $col-orange;
-            }
+      @media (any-pointer: fine) {
+        &:hover {
+          color: $col-orange;
+
+          .share-icon svg path {
+            fill: $col-orange;
           }
         }
       }
