@@ -409,10 +409,74 @@
         //     transform-origin: bottom;
         //   }
         // }
-    }
-  }
+      }
 
-  &__stack {
+      .certificate__link {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: $col-gray;
+        cursor: pointer;
+        border-top: 2px solid $col-boulder;
+        padding: 16px 0;
+
+        .certificate__info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+
+        .certificate__image-wrapper {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.4s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease, margin-top 0.3s ease;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 0;
+        }
+
+        .certificate__image {
+          max-width: 100%;
+          height: auto;
+          max-height: 250px;
+          object-fit: contain;
+          border-radius: 4px;
+          filter: grayscale(100%) contrast(1.1) brightness(0.9);
+          transition: filter 0.3s ease, transform 0.3s ease;
+          border: 1px solid rgba($col-boulder, 0.3);
+        }
+
+        .share-icon svg path {
+          transition: fill 0.2s;
+        }
+
+        @media (any-pointer: fine) {
+          &:hover {
+            color: $col-orange;
+
+            .share-icon svg path {
+              fill: $col-orange;
+            }
+
+            .certificate__image-wrapper {
+              max-height: 280px;
+              opacity: 1;
+              margin-top: 1.6rem;
+            }
+
+            .certificate__image {
+              filter: grayscale(100%) contrast(1.2) brightness(1.0);
+              transform: scale(1.02);
+            }
+          }
+        }
+      }
+    }
+
+    &__stack {
       margin-bottom: 9.6rem;
     }
 
@@ -765,69 +829,6 @@
             &:not(:last-of-type) {
               margin-right: 0.8rem;
             }
-          }
-        }
-      }
-    }
-  }
-
-  &__certificates {
-    @extend %padding-home;
-    max-width: 113rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 9.6rem;
-    padding-bottom: 9.6rem;
-
-    @include media(">tablet") {
-      padding-top: 16rem;
-      padding-bottom: 16rem;
-    }
-
-    .certificates__container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-
-      @include media(">tablet") {
-        flex-direction: row;
-        gap: 8rem;
-      }
-    }
-
-    .certificates__col {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      
-      /* Make sure the last item in each column has a bottom border to match the skills table bottom styling */
-      a:last-of-type {
-        border-bottom: 2px solid $col-boulder;
-      }
-    }
-
-    .certificate__link {
-      @extend %description-16;
-      padding: 16px 0;
-      border-top: 2px solid $col-boulder;
-      display: flex !important;
-      justify-content: space-between;
-      align-items: center;
-      text-decoration: none;
-      color: $col-gray;
-      cursor: pointer;
-      width: 100%;
-
-      .share-icon svg path {
-        transition: fill 0.2s;
-      }
-
-      @media (any-pointer: fine) {
-        &:hover {
-          color: $col-orange;
-
-          .share-icon svg path {
-            fill: $col-orange;
           }
         }
       }
