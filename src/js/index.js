@@ -184,6 +184,44 @@ export default class Home {
         },
       });
     }
+
+    // Certificates section animations
+    const certSection = document.querySelector(".home__certificates");
+    if (certSection) {
+      const certTitleSpans = certSection.querySelectorAll(".awards__title span");
+      if (certTitleSpans.length) {
+        gsap.from(certTitleSpans, {
+          scrollTrigger: {
+            trigger: certSection,
+            scroller: "[data-scroll-container]",
+            toggleActions: "play none none reverse",
+            start: "top 85%",
+          },
+          duration: 1,
+          opacity: 0,
+          yPercent: 100,
+          stagger: 0.15,
+          ease: "power4.out",
+        });
+      }
+
+      const certCards = certSection.querySelectorAll(".cert__card");
+      if (certCards.length) {
+        gsap.from(certCards, {
+          scrollTrigger: {
+            trigger: ".cert__grid",
+            scroller: "[data-scroll-container]",
+            toggleActions: "play none none reverse",
+            start: "top 85%",
+          },
+          duration: 0.9,
+          opacity: 0,
+          y: 60,
+          stagger: 0.1,
+          ease: "power3.out",
+        });
+      }
+    }
   }
 
   heroTextAnimation() {
