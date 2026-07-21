@@ -1,20 +1,27 @@
 [
   {
     "id": 1,
+    "title": "OJTRACK — INTELLIGENT OJT & INTERNSHIP TRACKER",
+    "role": "Lead Dev / <br /> Mobile & Systems Architecture",
+    "description": "Architected an offline-first Flutter application featuring dynamic completion date projection, high-performance liquid glass UI, SQLite engine, and Gemini AI activity note polishing.",
+    "link": "https://github.com/4xachi/ojtrack"
+  },
+  {
+    "id": 2,
     "title": "EVYM HUMANIZER — AI CONTENT REWRITER",
     "role": "Lead Dev / <br /> Backend Development",
     "description": "Developed a system to rewrite AI-generated content into natural human patterns, resulting in a 25% increase in user engagement for client projects.",
     "link": "https://github.com/4xachi/evym-humanizer"
   },
   {
-    "id": 2,
+    "id": 3,
     "title": "EYYSATCITY — STUDENT SIMULATION ENVIRONMENT",
     "role": "Lead Dev / <br /> Systems Architecture",
     "description": "Created an interactive student simulation environment that tracks user progress, allowing for better identification of resource gaps and increased support follow-ups.",
     "link": "https://github.com/4xachi/EYYSATCITY"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "PRIVACY RESUME — AI-POWERED RESUME BUILDER",
     "role": "Lead Dev / <br /> Full-Stack Engineering",
     "description": "Built an AI-powered resume builder tool that reduced user document creation time by 40% through automated content suggestions.",

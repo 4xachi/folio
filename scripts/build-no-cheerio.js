@@ -1,4 +1,5 @@
 const fs = require("fs").promises;
+const path = require("path");
 const projectData = require("../src/public/project-data.json");
 
 const generateProjectHtml = (project, index, setIndex) => {
@@ -85,7 +86,8 @@ const generateProjectHtml = (project, index, setIndex) => {
 };
 
 const buildHtml = async () => {
-  let html = await fs.readFile("./src/index.html", "utf8");
+  const indexPath = path.join(__dirname, "../src/index.html");
+  let html = await fs.readFile(indexPath, "utf8");
 
   const set1 = projectData.slice(0, 2);
   const set2 = projectData.slice(2);
@@ -116,8 +118,8 @@ const buildHtml = async () => {
   const section2Regex = /<section class="home__projects" data-projects-section-2="">([\s\S]*?)<\/section>/;
   html = html.replace(section2Regex, set2Html);
 
-  await fs.writeFile("./src/index.html", html, "utf8");
-  console.log("Successfully rebuilt projects in index.html without Cheerio!");
+  await fs.writeFile(indexPath, html, "utf8");
+  console.log("Successfully rebuilt projects in index.html!");
 };
 
 buildHtml().catch(console.error);
