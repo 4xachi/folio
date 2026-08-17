@@ -63,6 +63,36 @@
     }
   }
 
+  .project__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: flex-end;
+    padding-right: 2.2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.4rem;
+
+    @include media(">tablet") {
+      padding-right: 17.2rem;
+    }
+
+    .badge {
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $col-gray;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      transition: border-color 0.3s, color 0.3s;
+
+      &:hover {
+        color: $col-white;
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
   &__link {
     pointer-events: none;
 

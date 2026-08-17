@@ -11,6 +11,7 @@
 .home {
   padding: 2.4rem 0;
   visibility: hidden;
+
   &__nav {
     @extend %padding-home;
     margin-bottom: 6.4rem;
@@ -73,6 +74,7 @@
     }
 
     .nav {
+
       &__folio,
       &__availability {
         color: $col-boulder;
@@ -108,6 +110,7 @@
             @extend %title-328;
             letter-spacing: -0.05em;
             word-wrap: break-word;
+
             @include media(">phone") {
               display: none;
             }
@@ -173,6 +176,7 @@
             display: flex;
           }
         }
+
         .bottom__left {
           @extend %title-328;
           letter-spacing: -0.105em;
@@ -236,6 +240,7 @@
       display: inline-block;
       width: 100%;
       visibility: hidden;
+
       span {
         height: 2px;
         background: $col-boulder;
@@ -530,24 +535,32 @@
     }
 
     .cert__card {
-      display: block;
+      display: flex;
+      flex-direction: column;
       text-decoration: none;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba($col-boulder, 0.25);
-      transition: border-color 0.35s ease;
+      background: #161616;
+      border: 1px solid rgba($col-boulder, 0.2);
+      border-radius: 4px;
+      transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
 
       @media (any-pointer: fine) {
         &:hover {
-          border-color: $col-orange;
+          border-color: rgba($col-orange, 0.6);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 
-          .cert__image img {
-            filter: grayscale(40%);
-            transform: scale(1.03);
+          .cert__badge {
+            background: #1e1e1e;
+
+            svg {
+              transform: scale(1.1);
+            }
           }
 
-          .cert__info {
-            color: $col-gray;
+          .cert__title {
+            color: $col-white;
           }
 
           .cert__arrow svg path {
@@ -557,20 +570,18 @@
       }
     }
 
-    .cert__image {
-      position: relative;
+    .cert__badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 12rem;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      background: $col-black;
+      background: #121212;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: background 0.35s ease;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: grayscale(100%);
-        transition: filter 0.4s ease, transform 0.4s ease;
-        display: block;
+      svg {
+        transition: transform 0.35s ease;
       }
     }
 
@@ -579,22 +590,35 @@
       justify-content: space-between;
       align-items: center;
       padding: 1.6rem;
-      @extend %description-16;
       color: $col-boulder;
-      transition: color 0.3s ease;
-      text-transform: uppercase;
-      letter-spacing: 0.02em;
       gap: 1.2rem;
 
       @include media("<=phone") {
         padding: 1.2rem;
-        font-size: 13px;
       }
     }
 
-    .cert__title {
+    .cert__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
       flex: 1;
+    }
+
+    .cert__title {
+      @extend %description-16;
+      color: $col-gray;
       line-height: 1.3;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .cert__issuer {
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $col-boulder;
     }
 
     .cert__arrow {
@@ -728,6 +752,7 @@
 
       .to-copy {
         display: none;
+
         @media (any-pointer: fine) {
           display: block;
           opacity: 0;
@@ -766,7 +791,7 @@
         }
 
         &:hover {
-          & + .to-copy {
+          &+.to-copy {
             transform: translateY(0);
             opacity: 1;
           }
@@ -800,6 +825,7 @@
     &__left {
       display: flex;
       font-family: $font-sauce;
+
       @include media(">tablet") {
         left: 2.4rem;
         position: absolute;
@@ -843,6 +869,7 @@
         @include media("<=tablet") {
           margin-bottom: 4.8rem;
         }
+
         .link__flex {
           display: flex;
           margin-left: auto;
@@ -859,6 +886,7 @@
 
           &__inner {
             display: flex;
+
             .c-button {
               @include media("<=tablet") {
                 &:first-of-type {
@@ -866,12 +894,14 @@
                 }
               }
             }
+
             &.second {
               .c-button {
                 @include media("<=tablet") {
                   &:first-of-type {
                     margin-right: 0;
                   }
+
                   &:last-of-type {
                     margin-right: 0.8rem;
                   }
