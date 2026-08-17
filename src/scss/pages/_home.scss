@@ -442,6 +442,15 @@
 
     &__stack {
       margin-bottom: 9.6rem;
+
+      .home__content__desc {
+        color: $col-gray;
+
+        strong {
+          color: $col-gray;
+          font-weight: 600;
+        }
+      }
     }
 
     &__left {
@@ -460,40 +469,69 @@
         width: 100%;
       }
     }
+  }
 
-    .home__content {
-      &__title {
-        @extend %description-12;
-        text-transform: uppercase;
-        color: $col-boulder;
+  &__content {
+    @extend %padding-home;
+    max-width: 113rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 6.4rem;
+    padding-bottom: 6.4rem;
+
+    @include media(">tablet") {
+      padding-top: 9.6rem;
+      padding-bottom: 9.6rem;
+    }
+
+    &__title {
+      @extend %description-12;
+      text-transform: uppercase;
+      color: $col-boulder;
+      margin-bottom: 3.2rem;
+    }
+
+    &__item {
+      & + & {
+        margin-top: 4.8rem;
+        padding-top: 4.8rem;
+        border-top: 1px solid rgba($col-boulder, 0.25);
+      }
+    }
+
+    &__header {
+      margin-bottom: 1.2rem;
+    }
+
+    &__role {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: $col-gray;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    &__date {
+      @extend %description-12;
+      color: $col-boulder;
+      display: block;
+    }
+
+    &__desc {
+      @extend %description-16;
+      max-width: 95rem;
+      width: 100%;
+      color: $col-gray;
+      line-height: 1.7;
+
+      strong {
+        color: $col-gray;
+        font-weight: 600;
       }
 
-      &__desc {
-        @extend %description-16;
-        max-width: 95rem;
-        width: 100%;
-        @extend %links;
-
-        a {
-          text-transform: uppercase;
-        }
-
-        .contact-scroll {
-          color: $col-boulder;
-          transition: color 0.3s;
-          background: transparent;
-          border: 0;
-          padding: 0;
-          @extend %description-16;
-          font-weight: 500;
-          cursor: pointer;
-
-          @media (any-pointer: fine) {
-            &:hover {
-              color: $col-orange;
-            }
-          }
-        }
+      span {
+        color: $col-gray;
+        font-weight: 500;
       }
     }
   }
