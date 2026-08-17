@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "gsap": "^3.7.0",
-    "loconative-scroll": "https://github.com/quentinhocde/loconative-scroll/archive/refs/heads/master.tar.gz"
+    "loconative-scroll": "github:quentinhocde/loconative-scroll"
   }
 }
